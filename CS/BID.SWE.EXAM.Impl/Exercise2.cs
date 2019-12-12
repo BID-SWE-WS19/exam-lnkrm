@@ -7,17 +7,19 @@ namespace BID.SWE.EXAM.Impl
     {
         public object Method1()
         {
-            throw new NotImplementedException();
+            return new MyCell();
         }
 
         public int Method2()
         {
-            throw new NotImplementedException();
+            MySecondCell cellObj = new MySecondCell();
+            return cellObj.Grow();
         }
 
         public bool Method3(int o1)
         {
-            throw new NotImplementedException();
+            MyThirdCell cellObj = new MyThirdCell();
+            return cellObj.IsAlive(o1);
         }
     }
 }
