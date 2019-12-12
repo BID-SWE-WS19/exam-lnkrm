@@ -17,13 +17,16 @@ namespace BID.SWE.EXAM.Impl
             client.Connect(str, i);
             NetworkStream stream = client.GetStream();
 
-            StreamReader sr = new StreamReader(stream);
-
-            while (!sr.EndOfStream)
+            using (StreamReader sr = new StreamReader(stream))
             {
-                string line = sr.ReadLine();
-                readData.Add(line);
+                while (!sr.EndOfStream)
+                {
+                    string line = sr.ReadLine();
+                    readData.Add(line);
+                }
             }
+
+            stream.Close();
 
             return readData;
         }
