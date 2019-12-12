@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.IO;
 
 namespace BID.SWE.EXAM.Impl
@@ -16,8 +17,12 @@ namespace BID.SWE.EXAM.Impl
             long l = stream.Length;
             Console.WriteLine(l + "");
             string text = (string)e4.Method2(stream);
-            */
             
+
+            Exercise6 e6 = new Exercise6();
+            SqlCommand cmd = (SqlCommand)e6.Method1();
+            Console.WriteLine(cmd);
+            */
         }
     }
 }
