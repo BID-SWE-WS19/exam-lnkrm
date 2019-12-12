@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using BID.SWE.EXAM.Impl;
+using System.IO;
 
 namespace examTestProject
 {
@@ -81,6 +82,23 @@ namespace examTestProject
             Bewegung[] bewegungen = (Bewegung[])e3.Method2();
             Laufen laufen = new Laufen();
             Assert.AreEqual(bewegungen[0].GetType(), laufen.GetType());
+        }
+
+        [Test]
+        public void Exercise4Method1Test1()
+        {
+            Exercise4 e4 = new Exercise4();
+            Stream stream = (Stream)e4.Method1();
+            Assert.That(stream, Is.Not.Null);
+        }
+
+        [Test]
+        public void Exercise4Method2Test1()
+        {
+            Exercise4 e4 = new Exercise4();
+            Stream stream = (Stream)e4.Method1();
+            string text = (string)e4.Method2(stream);
+            Assert.AreEqual(text, "Frohe Weihnachten");
         }
 
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using BID.SWE1.Exam.Interfaces;
 
 namespace BID.SWE.EXAM.Impl
@@ -7,12 +8,51 @@ namespace BID.SWE.EXAM.Impl
     {
         public object Method1()
         {
-            throw new NotImplementedException();
+            Stream s = new MemoryStream();
+            using (StreamWriter sw = new StreamWriter(s, leaveOpen: true))
+            {
+                sw.WriteLine("Frohe Weihnachten");
+                sw.WriteLine(42 + "");
+                sw.WriteLine(false + "");
+                sw.Flush();
+            }
+
+            s.Position = 0;
+            return s;
         }
 
         public object Method2(object obj)
         {
-            throw new NotImplementedException();
+            Stream s = (Stream)obj;
+
+            int intVar;
+            string stringVar = "";
+            bool boolVar;
+
+            using (StreamReader sr = new StreamReader(s))
+            {
+                Console.WriteLine("Readin");
+                while (!sr.EndOfStream)
+                {
+                    string line = sr.ReadLine();
+                    Console.WriteLine(line);
+                    if (Int32.TryParse(line, out int n))
+                    {
+                        intVar = n;
+                    }
+                    else if (Boolean.TryParse(line, out bool b))
+                    {
+                        boolVar = b;
+                    }
+                    else
+                    {
+                        stringVar = line;
+                    }
+
+                }
+            }
+            s.Close();
+            return stringVar;
         }
     }
 }
