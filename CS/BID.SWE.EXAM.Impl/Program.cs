@@ -10,9 +10,11 @@ namespace BID.SWE.EXAM.Impl
             
             Console.WriteLine("Hello World!");
 
+            /*
             Exercise4 e4 = new Exercise4();
             Stream stream = (Stream)e4.Method1();
             string text = (string)e4.Method2(stream);
+            */
         }
     }
 }
