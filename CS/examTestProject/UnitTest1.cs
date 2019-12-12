@@ -60,6 +60,13 @@ namespace examTestProject
         }
 
         [Test]
+        public void Exercise2Method3Test3()
+        {
+            MyThirdCell cellObj = new MyThirdCell();
+            Assert.AreEqual(cellObj.IsAlive(3), false);
+        }
+
+        [Test]
         public void Exercise3Method1Test1()
         {
             Exercise3 e3 = new Exercise3();
@@ -72,7 +79,7 @@ namespace examTestProject
         {
             Exercise3 e3 = new Exercise3();
             MyMap map = (MyMap)e3.Method1();
-            Assert.AreEqual(map.GetMapSize(5), 25);
+            Assert.AreEqual(map.GetMapSize(5.2f), 5.2f*5.2f);
         }
 
         [Test]
@@ -93,11 +100,27 @@ namespace examTestProject
         }
 
         [Test]
+        public void Exercise3Method2Test2()
+        {
+            Exercise3 e3 = new Exercise3();
+            Bewegung[] bewegungen = (Bewegung[])e3.Method2();
+            Assert.AreEqual(bewegungen.Length, 2);
+        }
+
+        [Test]
         public void Exercise4Method1Test1()
         {
             Exercise4 e4 = new Exercise4();
             Stream stream = (Stream)e4.Method1();
             Assert.That(stream, Is.Not.Null);
+        }
+
+        [Test]
+        public void Exercise4Method1Test2()
+        {
+            Exercise4 e4 = new Exercise4();
+            Stream stream = (Stream)e4.Method1();
+            Assert.AreEqual(stream.Length, 30);
         }
 
         [Test]

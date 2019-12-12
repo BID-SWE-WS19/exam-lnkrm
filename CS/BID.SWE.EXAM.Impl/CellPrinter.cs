@@ -20,7 +20,7 @@ namespace BID.SWE.EXAM.Impl
             }
             else
             {
-                return $"Cell {color} born on {date} is dead";
+                return $"Cell {color} born on {date.Day}.{date.Month}.{date.Year} is dead";
             }
             
         }

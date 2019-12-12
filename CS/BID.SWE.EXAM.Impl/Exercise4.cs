@@ -12,8 +12,8 @@ namespace BID.SWE.EXAM.Impl
             using (StreamWriter sw = new StreamWriter(s, leaveOpen: true))
             {
                 sw.WriteLine("Frohe Weihnachten");
-                sw.WriteLine(42 + "");
-                sw.WriteLine(false + "");
+                sw.WriteLine(42);
+                sw.WriteLine(false);
                 sw.Flush();
             }
 
@@ -31,18 +31,19 @@ namespace BID.SWE.EXAM.Impl
 
             using (StreamReader sr = new StreamReader(s))
             {
-                Console.WriteLine("Readin");
                 while (!sr.EndOfStream)
                 {
                     string line = sr.ReadLine();
-                    Console.WriteLine(line);
+                    
                     if (Int32.TryParse(line, out int n))
                     {
                         intVar = n;
+                        //Console.WriteLine("int found");
                     }
                     else if (Boolean.TryParse(line, out bool b))
                     {
                         boolVar = b;
+                        //Console.WriteLine("bool found");
                     }
                     else
                     {

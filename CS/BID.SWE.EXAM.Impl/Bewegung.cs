@@ -6,12 +6,12 @@ namespace BID.SWE.EXAM.Impl
 {
     public class Bewegung
     {
-        public string Position()
+        public virtual string Position()
         {
             return "Position";
         }
 
-        public string Move(int x)
+        public virtual string Move(int x)
         {
             return "Bewege mich";
         }
