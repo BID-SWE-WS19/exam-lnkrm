@@ -16,7 +16,7 @@ namespace BID.SWE.EXAM.Impl
         {
             if (alive)
             {
-                return $"Cell {color} born on {date} is alive";
+                return $"Cell {color} born on {date.Day}.{date.Month}.{date.Year} is alive";
             }
             else
             {

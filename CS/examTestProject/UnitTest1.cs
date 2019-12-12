@@ -31,6 +31,14 @@ namespace examTestProject
         }
 
         [Test]
+        public void Exercise1Method1Test3()
+        {
+            Exercise1 e1 = new Exercise1();
+            CellPrinter returnedObject = (CellPrinter)e1.Method1();
+            Assert.AreEqual(returnedObject.PrintState(true, new System.DateTime(2019, 12, 12), "red"), "Cell red born on 12.12.2019 is alive");
+        }
+
+        [Test]
         public void Exercise2Method2Test1()
         {
             MySecondCell secondCell = new MySecondCell();
